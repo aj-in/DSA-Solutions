@@ -15,6 +15,8 @@ Select * from CITY
 where POPULATION> 100000 and
 COUNTRYCODE = 'USA';
 ```
+<br>
+<br>
 
 Q2) Revising the Select Query II
 <br>
@@ -30,4 +32,22 @@ Select Name from City
 where population > 120000
 and CountryCode ='USA';
 ```
+<br>
+<br>
+
+Q3) Select All
+<br>
+Query all columns (attributes) for every row in the CITY table.
+
+Link https://www.hackerrank.com/challenges/select-all-sql/problem?isFullScreen=true
+
+```
+select * from City;
+```
+
+<br>
+<br>
+
+
+
 
