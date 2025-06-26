@@ -90,17 +90,17 @@ where COUNTRYCODE ='JPN';
 
 
 
-Q6) Select All
-<br>
-Query all columns for a city in CITY with the ID 1661.
+Q6) Japanese Cities' Names
 
-Link [https://www.hackerrank.com/challenges/select-all-sql/problem?isFullScreen=true](https://www.hackerrank.com/challenges/select-by-id/problem?isFullScreen=true)
+<br>
+Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
+Link https://www.hackerrank.com/challenges/japanese-cities-name/problem?isFullScreen=true
 
 
 
 ```
-Select * from City
-where ID = 1661;
+select name from city
+where COUNTRYCODE ='JPN';
 ```
 
 <br>
