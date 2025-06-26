@@ -104,6 +104,74 @@ where COUNTRYCODE ='JPN';
 ```
 
 <br>
+
+Notes: Just fetched the name column
+<br>
+<br>
+
+
+Q7) Weather Observation Station 1
+
+
+
+<br>
+
+Query a list of CITY and STATE from the STATION table.
+
+Link https://www.hackerrank.com/challenges/weather-observation-station-1/problem?isFullScreen=true
+
+
+
+```
+select CITY, STATE
+from STATION ;
+```
+
+<br>
+<br>
+
+
+Q8)  Weather Observation Station 3
+<br>
+Query a list of CITY names from STATION for cities that have an even ID number. Print the results in any order, but exclude duplicates from the answer.
+Link https://www.hackerrank.com/challenges/weather-observation-station-3/problem?isFullScreen=true
+
+
+```
+select distinct(CITY) from STATION 
+where ID%2=0;
+```
+
+<br>
+Note: Any even division leaves no fractions i.e. they are evenly divided, leaving no carry overs/remainders, if there are any then its odd
+so we evenly divide ...x%2 and check if the value is 0 or not.
+
+
+<br>
+<br>
+
+
+
+Q9) Weather Observation Station 4
+
+<br>
+
+Find the difference between the total number of CITY entries in the table and the number of distinct CITY entries in the table.
+
+Link https://www.hackerrank.com/challenges/weather-observation-station-4/problem?isFullScreen=true
+
+
+
+
+```
+select count(CITY) - count(distinct(CITY)) 
+from station;
+```
+
+<br>
+<br>
+
+
 <br>
 
 
