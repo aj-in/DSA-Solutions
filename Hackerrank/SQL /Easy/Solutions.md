@@ -54,7 +54,7 @@ select * from City;
 
 
 
-Q4) Select All
+Q4) Select By ID
 <br>
 Query all columns for a city in CITY with the ID 1661.
 
@@ -71,17 +71,18 @@ where ID = 1661;
 <br>
 
 
-Q5) Select All
+Q5) Japanese Cities' Attributes
 <br>
-Query all columns for a city in CITY with the ID 1661.
+Query all attributes of every Japanese city in the CITY table. The COUNTRYCODE for Japan is JPN.
 
-Link [https://www.hackerrank.com/challenges/select-all-sql/problem?isFullScreen=true](https://www.hackerrank.com/challenges/select-by-id/problem?isFullScreen=true)
 
+Link https://www.hackerrank.com/challenges/japanese-cities-attributes/problem?isFullScreen=true
 
 
 ```
-Select * from City
-where ID = 1661;
+select * from city
+where COUNTRYCODE ='JPN';
+
 ```
 
 <br>
