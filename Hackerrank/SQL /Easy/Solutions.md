@@ -51,3 +51,62 @@ select * from City;
 
 
 
+
+
+
+Q4) Select All
+<br>
+Query all columns for a city in CITY with the ID 1661.
+
+Link [https://www.hackerrank.com/challenges/select-all-sql/problem?isFullScreen=true](https://www.hackerrank.com/challenges/select-by-id/problem?isFullScreen=true)
+
+
+
+```
+Select * from City
+where ID = 1661;
+```
+
+<br>
+<br>
+
+
+Q5) Select All
+<br>
+Query all columns for a city in CITY with the ID 1661.
+
+Link [https://www.hackerrank.com/challenges/select-all-sql/problem?isFullScreen=true](https://www.hackerrank.com/challenges/select-by-id/problem?isFullScreen=true)
+
+
+
+```
+Select * from City
+where ID = 1661;
+```
+
+<br>
+<br>
+
+
+
+Q6) Select All
+<br>
+Query all columns for a city in CITY with the ID 1661.
+
+Link [https://www.hackerrank.com/challenges/select-all-sql/problem?isFullScreen=true](https://www.hackerrank.com/challenges/select-by-id/problem?isFullScreen=true)
+
+
+
+```
+Select * from City
+where ID = 1661;
+```
+
+<br>
+<br>
+
+
+
+
+
+
