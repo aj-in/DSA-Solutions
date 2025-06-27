@@ -180,3 +180,84 @@ from station;
 
 
 
+
+
+
+
+
+
+
+Q11) Weather Observation Station 6
+
+<br>
+
+Query the list of CITY names starting with vowels (i.e., a, e, i, o, or u) from STATION. Your result cannot contain duplicates.
+
+Link https://www.hackerrank.com/challenges/weather-observation-station-6/problem?isFullScreen=true
+
+
+
+select distinct(city) from station
+where city like '%a'
+or
+where city like '%e'
+or
+where city like '%i'
+or
+where city like '%o'
+or
+where city like '%u';
+
+
+the above approach is syntactically wrong
+
+instead 
+
+
+
+```
+select distinct(city) from station
+where city like 'a%'             
+or
+ city like 'e%'
+or
+ city like 'i%'
+or
+ city like 'o%'
+or
+ city like 'u%'; 
+```
+
+
+
+
+<br>
+
+
+or use regexp (Regular Expressions)
+
+select distinct(city)
+from station
+where city like regexp '^[a,e,i,o,u]';      .... no need of commas and a like 
+
+
+```
+select distinct(city)
+from station
+where city regexp '^[aeiou]';
+```
+
+<br>
+<br>
+
+
+<br>
+
+
+
+
+
+
+
+
+
