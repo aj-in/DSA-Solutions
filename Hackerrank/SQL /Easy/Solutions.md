@@ -181,7 +181,25 @@ from station;
 
 
 
+Q10) Weather Observation Station 1
 
+
+
+<br>
+
+Query a list of CITY and STATE from the STATION table.
+
+Link https://www.hackerrank.com/challenges/weather-observation-station-1/problem?isFullScreen=true
+
+
+
+```
+select CITY, STATE
+from STATION ;
+```
+
+<br>
+<br>
 
 
 
@@ -253,6 +271,32 @@ where city regexp '^[aeiou]';
 
 <br>
 
+
+Q12) Weather Observation Station 7
+
+
+
+<br>
+
+Query the list of CITY names **ending** with vowels (a, e, i, o, u) from STATION. Your result cannot contain duplicates.
+
+Link https://www.hackerrank.com/challenges/weather-observation-station-7/problem?isFullScreen=true
+
+
+
+```
+select distinct(city)
+from station
+
+where city regexp '[aeiou]$';
+```
+
+<br>
+
+Regexp starts with ^ and ends with $
+<br>
+
+<br>
 
 
 
