@@ -225,9 +225,13 @@ limit 1;
 
 <br>
 
-select city, min(length(city))
-from station
-order by city  // This is wrong logic 1/2 of the output is to aggreagated but the other half isnt
+select city, min(length(city)) <br>
+from station <br>
+order by city  // This is wrong logic 1/2 of the output is to aggregated ,but the other half isnt
+
+
+<br>
+<br>
 
 after everything we need an overarching min so we can aggreagate over teh non aagreagating function i.e the ones that keeps number of rows constant....
 
