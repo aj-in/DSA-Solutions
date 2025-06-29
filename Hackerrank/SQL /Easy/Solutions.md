@@ -338,6 +338,76 @@ Regexp starts with ^ and ends with $
 <br>
 
 
+Q13) Select All
+<br>
+Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates.
+
+Link https://www.hackerrank.com/challenges/weather-observation-station-8/problem?isFullScreen=true
+
+```
+select distinct(City)
+
+from station
+
+
+where city regexp '^[aeiou]'
+
+
+and city regexp '[aeiou]$';
+```
+
+<br>
+
+Note 
+where city regexp '^[aeiou].[aeiou]$';  // this wont work we need 
+
+ where city regexp '^[aeiou].*[aeiou]$';  // this matches all characters  
+
+
+<br>
+<br>
+
+Q14) Japanese Cities' Names
+
+<br>
+Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
+
+Link https://www.hackerrank.com/challenges/japanese-cities-name/problem?isFullScreen=true
+
+
+
+```
+select name from city
+where COUNTRYCODE ='JPN';
+```
+
+<br>
+
+Notes: Just fetched the name column
+<br>
+<br>
+
+
+Q15) Japanese Cities' Names
+
+<br>
+Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
+
+Link https://www.hackerrank.com/challenges/japanese-cities-name/problem?isFullScreen=true
+
+
+
+```
+select name from city
+where COUNTRYCODE ='JPN';
+```
+
+<br>
+
+Notes: Just fetched the name column
+<br>
+<br>
+
 
 
 
