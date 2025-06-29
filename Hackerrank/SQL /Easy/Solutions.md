@@ -338,7 +338,7 @@ Regexp starts with ^ and ends with $
 <br>
 
 
-Q13) Select All
+Q13) Weather Observation Station 8
 <br>
 Query the list of CITY names from STATION which have vowels (i.e., a, e, i, o, and u) as both their first and last characters. Your result cannot contain duplicates.
 
@@ -361,50 +361,56 @@ and city regexp '[aeiou]$';
 Note 
 where city regexp '^[aeiou].[aeiou]$';  // this wont work we need 
 
- where city regexp '^[aeiou].*[aeiou]$';  // this matches all characters  
+where city regexp '^[aeiou].*[aeiou]$';  // this matches all characters  
 
 
 <br>
 <br>
 
-Q14) Japanese Cities' Names
+
+Q14) Weather Observation Station 9
 
 <br>
-Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
+Query the list of CITY names from STATION that do not start with vowels. Your result cannot contain duplicates.
 
-Link https://www.hackerrank.com/challenges/japanese-cities-name/problem?isFullScreen=true
+Link https://www.hackerrank.com/challenges/weather-observation-station-9/problem?isFullScreen=true
 
 
 
 ```
-select name from city
-where COUNTRYCODE ='JPN';
+select distinct(city)
+from station
+
+where city not regexp '^[aeiou]';
 ```
 
 <br>
 
-Notes: Just fetched the name column
-<br>
 <br>
 
 
-Q15) Japanese Cities' Names
+Q15) Weather Observation Station 10
 
 <br>
-Query the names of all the Japanese cities in the CITY table. The COUNTRYCODE for Japan is JPN.
 
-Link https://www.hackerrank.com/challenges/japanese-cities-name/problem?isFullScreen=true
+Query the list of CITY names from STATION that do not end with vowels. Your result cannot contain duplicates.
+
+
+Link https://www.hackerrank.com/challenges/weather-observation-station-10/problem?isFullScreen=true
 
 
 
 ```
-select name from city
-where COUNTRYCODE ='JPN';
+select distinct(city)
+from station
+
+where city not regexp '[aeiou]$';
+
+
 ```
 
 <br>
 
-Notes: Just fetched the name column
 <br>
 <br>
 
