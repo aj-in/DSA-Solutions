@@ -512,6 +512,22 @@ order by employee_id;
 <br>
 
 
+Q22)  Revising Aggregations - The Count Function
+<br>
+Query a count of the number of cities in CITY having a Population larger than 100000.
+
+Link https://www.hackerrank.com/challenges/revising-aggregations-the-count-function/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+select count(*)
+from City
+where population> 100000;
+```
+<br>
+<br>
 
 
 
