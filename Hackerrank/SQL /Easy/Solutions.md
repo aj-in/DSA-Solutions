@@ -529,5 +529,20 @@ where population> 100000;
 <br>
 <br>
 
+Q23) Revising Aggregations - The Sum Function
+
+<br>
+Query the total population of all cities in CITY where District is California.
+
+Link: https://www.hackerrank.com/challenges/revising-aggregations-sum/problem?isFullScreen=true
+
+Solution:
+
+```
+
+select sum(population) from CITY 
+where District = 'California';
+
+```
 
 
