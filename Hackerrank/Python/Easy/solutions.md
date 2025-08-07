@@ -149,19 +149,55 @@ for i in range(1,n+1):                         //dont forget the +1 end of range
 <br>
 
 
-Q1)  Revising the Select Query I
+Q1)  Find the Runner-Up Score!
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given  scores. Store them in a list and find the score of the runner-up.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Input Format
+
+The first line contains . The second line contains an array   of  integers each separated by a space.
+
+Constraints
+
+Output Format
+
+Print the runner-up score.
+
+Sample Input 0
+
+5
+2 3 6 6 5
+Sample Output 0
+
+5
+Explanation 0
+
+Given list is . The maximum score is , second maximum is . Hence, we print  as the runner-up score.
+
+
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem?isFullScreen=true)
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+if __name__ == '__main__':
+    n = int(input())
+    arr = list(map(int, input().split()))          //Tampered with thee question kinda
+
+arr.sort()
+
+
+max_val = max(arr)
+
+while max_val in arr:
+    arr.remove(max_val)
+    
+    
+print(max(arr))
+
+
 ```
 <br>
 <br>
