@@ -117,19 +117,33 @@ for i in range (0, n):
 <br>
 
 
-Q1)  Revising the Select Query I
+Q5) Print Function
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Check Tutorial tab to know how to to solve.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+The included code stub will read an integer, , from STDIN.
 
+Without using any string methods, try to print the following:
+
+
+Note that "" represents the consecutive values in between.
+
+Example
+
+Print the string .
+
+Input Format
+
+The first line contains an integer .
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+](https://www.hackerrank.com/challenges/python-print/problem?isFullScreen=true)
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+for i in range(1,n+1):                         //dont forget the +1 end of range in exclusive
+    print(i, end='')
 ```
 <br>
 <br>
