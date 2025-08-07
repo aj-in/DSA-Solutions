@@ -70,19 +70,27 @@ print(a*b)
 <br>
 
 
-Q1)  Revising the Select Query I
+Q3) Python: Division
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+The provided code stub reads two integers,  and , from STDIN.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Add logic to print two lines. The first line should contain the result of integer division,  // . The second line should contain the result of float division,  / .
 
+No rounding or formatting is necessary.
+
+Example
+
+
+The result of the integer division .
+The result of the float division is .
+
+Link hackerrank.com/challenges/python-division?isFullScreen=true
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+print(a//b)
+print(a/b)
 ```
 <br>
 <br>
