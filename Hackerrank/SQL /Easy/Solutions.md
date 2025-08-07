@@ -165,7 +165,7 @@ Link https://www.hackerrank.com/challenges/weather-observation-station-4/problem
 
 
 ```
-select count(CITY) - count(distinct(CITY)) 
+select count(CITY) - count(distinct(CITY))   //maybe helpful in finding duplicatess
 from station;
 ```
 
@@ -181,7 +181,7 @@ from station;
 
 
 
-Q10) Weather Observation Station 5
+Q10) Weather Observation Station 5 ***
 
 
 
