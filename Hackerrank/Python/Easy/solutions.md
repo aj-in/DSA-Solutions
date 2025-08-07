@@ -96,7 +96,7 @@ print(a/b)
 <br>
 
 
-Q4)  Revising the Select Query I
+Q4)  Loops
 <br>
 Task
 The provided code stub reads an integer, , from STDIN. For all non-negative integers , print .
