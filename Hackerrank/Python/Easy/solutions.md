@@ -149,7 +149,7 @@ for i in range(1,n+1):                         //dont forget the +1 end of range
 <br>
 
 
-Q1)  Find the Runner-Up Score!
+Q6)  Find the Runner-Up Score!
 <br>
 Given the participants' score sheet for your University Sports Day, you are required to find the runner-up score. You are given  scores. Store them in a list and find the score of the runner-up.
 
@@ -176,7 +176,7 @@ Given list is . The maximum score is , second maximum is . Hence, we print  as t
 
 
 
-Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem?isFullScreen=true)
+Link [[https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem?isFullScreen=true)](https://www.hackerrank.com/challenges/find-second-maximum-number-in-a-list/problem?isFullScreen=true)
 
 
 Solution: 
