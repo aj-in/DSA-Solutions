@@ -96,19 +96,22 @@ print(a/b)
 <br>
 
 
-Q1)  Revising the Select Query I
+Q4)  Revising the Select Query I
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Task
+The provided code stub reads an integer, , from STDIN. For all non-negative integers , print .
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Example
+
+The list of non-negative integers that are less than  is . Print the square of each number on a separate line.
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/python-loops/problem?isFullScreen=true)
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+for i in range (0, n):
+    print(i ** 2)
 ```
 <br>
 <br>
