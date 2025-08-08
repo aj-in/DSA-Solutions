@@ -598,38 +598,45 @@ where COUNTRYCODE  = 'JPN';
 
 
 
-Q1)  Revising the Select Query I
+Q27)  Population Density Difference
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Query the difference between the maximum and minimum populations in CITY.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Link https://www.hackerrank.com/challenges/population-density-difference/problem?isFullScreen=true
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select max(population)-min(population) from city;
+
 ```
 <br>
 <br>
 
 
 
-Q1)  Revising the Select Query I
+Q28) Top Earners
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+We define an employee's total earnings to be their monthly  worked, and the maximum total earnings to be the maximum total earnings for any employee in the Employee table. Write a query to find the maximum total earnings for all employees as well as the total number of employees who have maximum total earnings. Then print these values as  space-separated integers.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
-
+Link https://www.hackerrank.com/challenges/earnings-of-employees/problem?isFullScreen=true
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+
+select Total_Earnings, count(*) from (
+select * , salary * months as "Total_Earnings" from employee
+    order by Total_Earnings desc
+    
+) as temp1
+
+
+group by Total_Earnings
+order by Total_Earnings desc
+limit 1 ;
+
 ```
 <br>
 <br>
