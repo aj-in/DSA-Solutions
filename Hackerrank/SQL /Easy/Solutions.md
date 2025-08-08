@@ -643,54 +643,59 @@ limit 1 ;
 
 
 
-Q1)  Revising the Select Query I
+Q29)  Weather Observation Station 2
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Query the following two values from the STATION table:
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+The sum of all values in LAT_N rounded to a scale of  decimal places.
+The sum of all values in LONG_W rounded to a scale of  decimal places.
+
+Link https://www.hackerrank.com/challenges/weather-observation-station-2/problem?isFullScreen=true
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select round(sum(LAT_N),2) , round(sum(LONG_W),2)
+from station;
+
 ```
 <br>
 <br>
 
 
-Q1)  Revising the Select Query I
+Q30)  Weather Observation Station 13
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Query the sum of Northern Latitudes (LAT_N) from STATION having values greater than  and less than . Truncate your answer to  decimal places.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Link https://www.hackerrank.com/challenges/weather-observation-station-13/problem?isFullScreen=true
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select round(sum(LAT_N), 4) from station
+where LAT_N > 38.7880 and LAT_N <137.2345;
 ```
 <br>
 <br>
 
-Q1)  Revising the Select Query I
+Q31)  Weather Observation Station 14
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Query the greatest value of the Northern Latitudes (LAT_N) from STATION that is less than . Truncate your answer to  decimal places.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
-
+Link https://www.hackerrank.com/challenges/weather-observation-station-14/problem?isFullScreen=true
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select round(LAT_N, 4) from station
+
+where 
+LAT_N < 137.2345
+order by 1 desc
+limit 1;
+
 ```
 <br>
 <br>
