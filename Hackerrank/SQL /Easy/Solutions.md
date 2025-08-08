@@ -723,57 +723,70 @@ limit 1;
 
 
 
-Q1)  Revising the Select Query I
+Q33)  Weather Observation Station 16
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Query the smallest Northern Latitude (LAT_N) from STATION that is greater than . Round your answer to  decimal places.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Link https://www.hackerrank.com/challenges/weather-observation-station-16/problem?isFullScreen=true
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select round(LAT_N,4)
+from station
+where LAT_N>38.7780
+order by LAT_N 
+limit 1;
 ```
 <br>
 <br>
 
 
 
-Q1)  Revising the Select Query I
+Q34)  Weather Observation Station 17
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Query the Western Longitude (LONG_W)where the smallest Northern Latitude (LAT_N) in STATION is greater than . Round your answer to  decimal places.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Link https://www.hackerrank.com/challenges/weather-observation-station-17/problem?isFullScreen=true
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select round(LONG_W,4) from station
+where 
+LAT_N > 38.7780 
+order by LAT_N 
+limit 1;
 ```
 <br>
 <br>
 
 
 
-Q1)  Revising the Select Query I
+Q35)  Population Census
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Given the CITY and COUNTRY tables, query the sum of the populations of all cities where the CONTINENT is 'Asia'.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+Link https://www.hackerrank.com/challenges/asian-population/problem?isFullScreen=true
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select sum(city.population) from city
+
+
+join country
+
+on
+
+CITY.CountryCode = COUNTRY.Code
+where continent ='Asia';
+
 ```
 <br>
 <br>
