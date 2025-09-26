@@ -1,23 +1,50 @@
 
 
-Q1)  Average Population of Each Continent ***
+Q1)  175. Combine Two Tables
+
+
 <br>
-Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective average city populations (CITY.Population) rounded **down** to the nearest integer.
+Table: Person
 
-Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| personId    | int     |
+| lastName    | varchar |
+| firstName   | varchar |
++-------------+---------+
+personId is the primary key (column with unique values) for this table.
+This table contains information about the ID of some persons and their first and last names.
+ 
 
-Link https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?isFullScreen=true
+Table: Address
+
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| addressId   | int     |
+| personId    | int     |
+| city        | varchar |
+| state       | varchar |
++-------------+---------+
+addressId is the primary key (column with unique values) for this table.
+Each row of this table contains information about the city and state of one person with ID = PersonId.
+ 
+
+Write a solution to report the first name, last name, city, and state of each person in the Person table. If the address of a personId is not present in the Address table, report null instead.
+
+Link [https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?isFullScreen=true](https://leetcode.com/problems/combine-two-tables/description/)
 
 
 Solution: 
 
 ```
-select COUNTRY.Continent, floor(avg(CITY.Population))
-from COUNTRY 
-join CITY on 
-CITY.CountryCode = COUNTRY.Code
-group by 1
-order by 2;
+select P.firstName, P.lastName, A.city, A.state
+from Person as P
+left join
+Address as A
+on
+P.personID = A.personID;
 
 ```
 <br>
