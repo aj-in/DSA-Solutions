@@ -52,9 +52,23 @@ P.personID = A.personID;
 
 
 
-Q1)  Revising the Select Query I
+Q2) 182. Duplicate Emails
+
+
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| email       | varchar |
++-------------+---------+
+id is the primary key (column with unique values) for this table.
+Each row of this table contains an email. The emails will not contain uppercase letters.
+ 
+
+Write a solution to report all the duplicate emails. Note that it's guaranteed that the email field is not NULL.
+
+Return the result table in any order.
 
 Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
 
@@ -62,13 +76,16 @@ Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isF
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+with dup_count as (select email, count(*) from Person
+group by email 
+having count(*)> 1)
+
+Select email from dup_count;
 ```
 <br>
 <br>
 
+Logic: use a group by to group on the count of unique mails
 
 
 Q1)  Revising the Select Query I
