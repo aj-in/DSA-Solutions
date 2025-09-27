@@ -152,6 +152,39 @@ in left join placed customers on left, so i see where null pops up because htey 
 
 
 
+Q4)  511. Game Play Analysis I ***
+
+<br>
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+](https://leetcode.com/problems/game-play-analysis-i/)
+
+Solution: 
+
+```
+select player_id, min(event_date) as first_login
+from Activity
+group by player_id 
+```
+<br>
+<br>
+
+Logic: 
+<Br>
+
+
+Why GROUP BY Before MIN()?
+
+<br>
+GROUP BY player_id organizes the table into groups where each group contains all rows for a specific player_id.<br>
+
+After the rows are grouped, MIN(event_date) finds the earliest event_date within each group.<br>
+
+If MIN() were applied first (without grouping), it would find the single earliest date across the entire table, regardless of player_id. <br>
+This would give you only one row (the earliest login of any player), which isn’t what you want.
+
+
+
 Q1)  Revising the Select Query I
 <br>
 Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
@@ -168,3 +201,381 @@ COUNTRYCODE = 'USA';
 ```
 <br>
 <br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Revising the Select Query I
+<br>
+Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+Select * from CITY
+where POPULATION> 100000 and
+COUNTRYCODE = 'USA';
+```
+<br>
+<br>
+
+
