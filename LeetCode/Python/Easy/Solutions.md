@@ -43,19 +43,29 @@ Solution:
 class Solution:
     def scoreOfString(self, s: str) -> int:
         
+
+
         my_string = s
-        ascii_values = [ord(char) for char in my_string]
-        print(ascii_values)
-        summation = 0
+        ASCII_list = []
+
+        for letter in my_string:
+            ASCII_list.append(ord(letter))
+        # print(ASCII_list)
 
 
-        for i in range(0, len(my_string)):
+        ASCII_sum=0
+
+
+        for i in range(0,len(my_string)):
             
             if i == len(my_string)-1:
                 break
-            summation = summation + abs (ascii_values[i] - ascii_values[i+1])  #used abs for Mathematical Mod function
             
-        return summation
+            ASCII_sum = ASCII_sum + abs( ASCII_list[i]  - ASCII_list [i+1] )
+            
+        return(ASCII_sum)
+
+
 ```
 <br>
 <br>
