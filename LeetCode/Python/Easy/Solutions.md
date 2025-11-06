@@ -1,4 +1,6 @@
-Q1)  3110. Score of a String
+Q1)  
+<br >
+3110. Score of a String
 <br>
 You are given a string s. The score of a string is defined as the sum of the absolute difference between the ASCII values of adjacent characters.
 
@@ -76,21 +78,56 @@ Handle that edge case with 'if' block
 
 
 
-
-
-
-
-Q1)  Say "Hello, World!" With Python
 <br>
-The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+<br>
 
-Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Q2)  
+<br>
+
+2894. Divisible and Non-divisible Sums Difference
+<br>
+2894. Divisible and Non-divisible Sums Difference
+Solved
+Easy
+Topics
+premium lock icon
+Companies
+Hint
+You are given positive integers n and m.
+
+Define two integers as follows:
+
+num1: The sum of all integers in the range [1, n] (both inclusive) that are not divisible by m.
+num2: The sum of all integers in the range [1, n] (both inclusive) that are divisible by m.
+Return the integer num1 - num2.
+
+
+Link https://leetcode.com/problems/divisible-and-non-divisible-sums-difference/description/
 
 
 Solution: 
 
 ```
-print("Hello, World!")
+class Solution:
+    def differenceOfSums(self, n: int, m: int) -> int:
+
+
+        num1 = num2 = 0                  #unpacking 
+
+        for i in range(1,n+1):
+            
+            
+            # num1
+            if i%m!=0:
+                num1 = num1 + i
+            
+            # num2
+            else:
+                num2=num2+i
+            
+        return(num1-num2)
 ```
 <br>
 <br>
