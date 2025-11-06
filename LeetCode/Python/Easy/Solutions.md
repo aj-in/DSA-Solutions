@@ -147,3 +147,223 @@ print("Hello, World!")
 ```
 <br>
 <br>
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
+
+
+
+
+
+Q1)  Say "Hello, World!" With Python
+<br>
+The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+
+Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+
+
+Solution: 
+
+```
+print("Hello, World!")
+```
+<br>
+<br>
