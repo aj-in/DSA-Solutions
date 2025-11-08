@@ -183,9 +183,11 @@ After the rows are grouped, MIN(event_date) finds the earliest event_date within
 If MIN() were applied first (without grouping), it would find the single earliest date across the entire table, regardless of player_id. <br>
 This would give you only one row (the earliest login of any player), which isn’t what you want.
 
+<br>
+<br>
 
 
-Q1)  
+Q5)  
 1068. Product Sales Analysis I
 <br>
 Table: Sales
