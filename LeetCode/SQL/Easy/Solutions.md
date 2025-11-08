@@ -6,6 +6,7 @@ Q1)  175. Combine Two Tables
 <br>
 Table: Person
 
+```
 +-------------+---------+
 | Column Name | Type    |
 +-------------+---------+
@@ -13,11 +14,14 @@ Table: Person
 | lastName    | varchar |
 | firstName   | varchar |
 +-------------+---------+
+
+```
 personId is the primary key (column with unique values) for this table.
 This table contains information about the ID of some persons and their first and last names.
  
 
 Table: Address
+```
 
 +-------------+---------+
 | Column Name | Type    |
@@ -27,6 +31,7 @@ Table: Address
 | city        | varchar |
 | state       | varchar |
 +-------------+---------+
+```
 addressId is the primary key (column with unique values) for this table.
 Each row of this table contains information about the city and state of one person with ID = PersonId.
  
@@ -56,12 +61,17 @@ Q2) 182. Duplicate Emails
 
 
 <br>
+
+
+
+```
 +-------------+---------+
 | Column Name | Type    |
 +-------------+---------+
 | id          | int     |
 | email       | varchar |
 +-------------+---------+
+```
 id is the primary key (column with unique values) for this table.
 Each row of this table contains an email. The emails will not contain uppercase letters.
  
