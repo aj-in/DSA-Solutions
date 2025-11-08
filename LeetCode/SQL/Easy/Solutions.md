@@ -243,19 +243,47 @@ s.product_id = p.product_id;
 
 
 
-Q1)  Revising the Select Query I
+Q6) 
+1378. Replace Employee ID With The Unique Identifier
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| name          | varchar |
++---------------+---------+
+id is the primary key (column with unique values) for this table.
+Each row of this table contains the id and the name of an employee in a company.
+ 
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Table: EmployeeUNI
 
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| unique_id     | int     |
++---------------+---------+
+(id, unique_id) is the primary key (combination of columns with unique values) for this table.
+Each row of this table contains the id and the corresponding unique id of an employee in the company.
+ 
+
+Write a solution to show the unique ID of each user, If a user does not have a unique ID replace just show null.
+
+Return the result table in any order.
+
+The result format is in the following example.
+
+Link https://leetcode.com/problems/replace-employee-id-with-the-unique-identifier/description/
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select u.unique_id, e.name from Employees as e
+left join              -- left join because they didnt want to prioritize one of the tables, they wanted NULL for absesnce which left or right join does
+EmployeeUNI as u 
+on
+e.id = u.id  
 ```
 <br>
 <br>
