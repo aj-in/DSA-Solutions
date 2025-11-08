@@ -185,19 +185,54 @@ This would give you only one row (the earliest login of any player), which isnâ€
 
 
 
-Q1)  Revising the Select Query I
+Q1)  
+1068. Product Sales Analysis I
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Table: Sales
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
++-------------+-------+
+| Column Name | Type  |
++-------------+-------+
+| sale_id     | int   |
+| product_id  | int   |
+| year        | int   |
+| quantity    | int   |
+| price       | int   |
++-------------+-------+
+(sale_id, year) is the primary key (combination of columns with unique values) of this table.
+product_id is a foreign key (reference column) to Product table.
+Each row of this table shows a sale on the product product_id in a certain year.
+Note that the price is per unit.
+ 
 
+Table: Product
+
++--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| product_id   | int     |
+| product_name | varchar |
++--------------+---------+
+product_id is the primary key (column with unique values) of this table.
+Each row of this table indicates the product name of each product.
+ 
+
+Write a solution to report the product_name, year, and price for each sale_id in the Sales table.
+
+Return the resulting table in any order.
+
+
+
+Link https://leetcode.com/problems/product-sales-analysis-i/description/
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select p.product_name, s.year, s.price from Sales as s
+join 
+Product as p
+on
+s.product_id = p.product_id;
 ```
 <br>
 <br>
