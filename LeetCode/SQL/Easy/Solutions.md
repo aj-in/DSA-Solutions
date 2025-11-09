@@ -435,14 +435,35 @@ Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isF
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+with temp1 as (select distinct salary 
+from Employee
+order by 1 desc
+limit 1 offset 1)
+
+select ifnull(salary, NULL) as 'SecondHighestSalary'  from temp1;   // the above SHOULD work but it doesnt on Leetcode
 ```
 <br>
 <br>
+Correct Solution
+```
+select (
 
+    select distinct salary 
+    from Employee
+    order by 1 desc
+    limit 1 offset 1
+) as 'SecondHighestSalary';
+```
 
+Notes: 
+If multiple people have the same highest salary, OFFSET 1 gives you another row with the same salary, not the second highest
+```
+ORDER BY salary DESC → 200, 200, 100
+LIMIT 1 OFFSET 1 → returns 200
+```
+
+Wrong logic above
+use distinct ***
 
 
 
