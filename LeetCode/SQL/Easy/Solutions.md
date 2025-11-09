@@ -365,23 +365,62 @@ Notes: Use IFNULL(column_name, replacement) **** to deal with null values, also 
 <br>
 <br>
 
-Q1)  Revising the Select Query I
+Q8) 
+1795. Rearrange Products Table
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Input: 
+Products table:
+```
++------------+--------+--------+--------+
+| product_id | store1 | store2 | store3 |
++------------+--------+--------+--------+
+| 0          | 95     | 100    | 105    |
+| 1          | 70     | null   | 80     |
++------------+--------+--------+--------+
+```
+Output: 
+```
++------------+--------+-------+
+| product_id | store  | price |
++------------+--------+-------+
+| 0          | store1 | 95    |
+| 0          | store2 | 100   |
+| 0          | store3 | 105   |
+| 1          | store1 | 70    |
+| 1          | store3 | 80    |
++------------+--------+-------+
+```
+Explanation: 
+Product 0 is available in all three stores with prices 95, 100, and 105 respectively.
+Product 1 is available in store1 with price 70 and store3 with price 80. The product is not available in store2.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
-
+Link https://leetcode.com/problems/rearrange-products-table/
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select product_id, 'store1' as store ,store1 as 'price' from Products 
+where store1 is not null
+union
+
+
+select product_id, 'store2' as store ,store2 as 'price' from Products 
+where store2 is not null
+
+union
+
+select product_id, 'store3' as store ,store3 as 'price' from Products 
+where store3 is not null;
 ```
 <br>
 <br>
 
+make pivot tables my making UNIONs, also you can create an new column and filling it by default string by 
+<br>
+'store2' as store .......yes the '' on the right side like CTE
+
+<br>
+<br>
 
 
 
