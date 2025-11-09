@@ -302,9 +302,42 @@ e.id = u.id
 
 
 
-Q1)  Revising the Select Query I
+Q7)  
+1407. Top Travellers
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+```
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| name          | varchar |
++---------------+---------+
+```
+id is the column with unique values for this table.
+name is the name of the user.
+ 
+
+Table: Rides
+```
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| id            | int     |
+| user_id       | int     |
+| distance      | int     |
++---------------+---------+
+```
+id is the column with unique values for this table.
+user_id is the id of the user who traveled the distance "distance".
+ 
+
+Write a solution to report the distance traveled by each user.
+
+Return the result table ordered by travelled_distance in descending order, if two or more users traveled the same distance, order them by their name in ascending order.
+
+The result format is in the following example.
+
+ 
 
 Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
 
@@ -312,16 +345,25 @@ Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isF
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select u.name,   IFNULL(sum(r.distance), 0) as 'travelled_distance'  from 
+Users as u
+left join
+Rides as r
+on 
+u.id = r.user_id
+group by u.id
+
+order by 2 desc, 1 asc;
 ```
 <br>
 <br>
 
 
+Notes: Use IFNULL(column_name, replacement) **** to deal with null values, also check before JOINING how to deal with NULLs and no matchec if nothign then inner join if we want NULLS then left/right
 
 
+<br>
+<br>
 
 Q1)  Revising the Select Query I
 <br>
