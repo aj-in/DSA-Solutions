@@ -452,7 +452,7 @@ class Solution:
 
  ```
 
-Solution : use enumerate to get index...way better than making an indedex counter and incrementing it for each loop
+Solution : use enumerate to get index...way better than making an index counter and incrementing it for each loop
 
 
 
