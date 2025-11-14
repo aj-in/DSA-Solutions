@@ -377,25 +377,85 @@ class Solution:
                 temp.append(i)
 
         return temp
-                ```
+ ```
 <br>
 <br>
 
 
 
 
-Q1)  Say "Hello, World!" With Python
+Q7)  
+2942. Find Words Containing Character
+
 <br>
-The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+You are given a 0-indexed array of strings words and a character x.
 
-Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+Return an array of indices representing the words that contain the character x.
 
+Note that the returned array may be in any order.
+
+ 
+
+Example 1:
+
+Input: words = ["leet","code"], x = "e"
+Output: [0,1]
+Explanation: "e" occurs in both words: "leet", and "code". Hence, we return indices 0 and 1.
+Example 2:
+
+Input: words = ["abc","bcd","aaaa","cbc"], x = "a"
+Output: [0,2]
+Explanation: "a" occurs in "abc", and "aaaa". Hence, we return indices 0 and 2.
+Example 3:
+
+Input: words = ["abc","bcd","aaaa","cbc"], x = "z"
+Output: []
+Explanation: "z" does not occur in any of the words. Hence, we return an empty array.
+ 
+
+Constraints:
+
+1 <= words.length <= 50
+1 <= words[i].length <= 50
+x is a lowercase English letter.
+words[i] consists only of lowercase English letters.
+
+Link https://leetcode.com/problems/find-words-containing-character/
 
 Solution: 
 
 ```
-print("Hello, World!")
+class Solution:
+    def findWordsContaining(self, words: List[str], x: str) -> List[int]:
+        temp = []
+        for idx, i in enumerate(words):
+            if x in i:
+                temp.append(idx)
+
+        return temp
+
 ```
+<br>
+<br>
+Notes:
+<br>
+Problem with my approach:
+
+```
+class Solution:
+    def findWordsContaining(self, words: List[str], x: str) -> List[int]:
+        temp = []
+        for i in words:
+            if x in i:
+                temp.append(words.index(i))         .... words.index(i) finds the first occurrence of string i in the list. When the list contains many identical strings (like your long "aaaa..." test), words.index(i) always returns 0, so you append 0 repeatedly.
+
+
+ ```
+
+Solution : use enumerate to get index...way better than making an indedex counter and incrementing it for each loop
+
+
+
 <br>
 <br>
 
