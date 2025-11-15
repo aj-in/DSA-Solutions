@@ -513,17 +513,39 @@ class Solution:
 
 
 
-Q1)  Say "Hello, World!" With Python
+Q9)  
+1108. Defanging an IP Address
 <br>
-The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+Given a valid (IPv4) IP address, return a defanged version of that IP address.
 
-Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+A defanged IP address replaces every period "." with "[.]".
+
+ 
+
+Example 1:
+
+Input: address = "1.1.1.1"
+Output: "1[.]1[.]1[.]1"
+Example 2:
+
+Input: address = "255.100.50.0"
+Output: "255[.]100[.]50[.]0"
+ 
+
+Constraints:
+
+The given address is a valid IPv4 address.
+<br>
+Link https://leetcode.com/problems/defanging-an-ip-address/
 
 
 Solution: 
 
 ```
-print("Hello, World!")
+class Solution:
+    def defangIPaddr(self, address: str) -> str:
+        temp  = address.replace(".", "[.]")
+        return temp
 ```
 <br>
 <br>
