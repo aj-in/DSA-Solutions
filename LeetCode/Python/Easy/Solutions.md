@@ -553,18 +553,104 @@ class Solution:
 
 
 
-Q1)  Say "Hello, World!" With Python
+Q10)  Say "Hello, World!" With Python
 <br>
-The above code will print Hello, World! on your screen. Try it yourself in the editor below!
+You are given a string s consisting of lowercase English letters ('a' to 'z').
 
-Link [https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true](https://www.hackerrank.com/challenges/py-hello-world/problem?isFullScreen=true)
+Your task is to:
+
+Find the vowel (one of 'a', 'e', 'i', 'o', or 'u') with the maximum frequency.
+Find the consonant (all other letters excluding vowels) with the maximum frequency.
+Return the sum of the two frequencies.
+
+Note: If multiple vowels or consonants have the same maximum frequency, you may choose any one of them. If there are no vowels or no consonants in the string, consider their frequency as 0.
+
+The frequency of a letter x is the number of times it occurs in the string.
+ 
+
+Example 1:
+
+Input: s = "successes"
+
+Output: 6
+
+Explanation:
+
+The vowels are: 'u' (frequency 1), 'e' (frequency 2). The maximum frequency is 2.
+The consonants are: 's' (frequency 4), 'c' (frequency 2). The maximum frequency is 4.
+The output is 2 + 4 = 6.
+Example 2:
+
+Input: s = "aeiaeia"
+
+Output: 3
+
+Explanation:
+
+The vowels are: 'a' (frequency 3), 'e' ( frequency 2), 'i' (frequency 2). The maximum frequency is 3.
+There are no consonants in s. Hence, maximum consonant frequency = 0.
+The output is 3 + 0 = 3.
+ 
+
+Constraints:
+
+1 <= s.length <= 100
+s consists of lowercase English letters only.
 
 
 Solution: 
 
 ```
-print("Hello, World!")
-```
+class Solution:
+    def maxFreqSum(self, s: str) -> int:
+        vowels = ["a","e", "i", "o", "u"]
+        x = 0
+        counts = {}
+
+        for key in s: 
+            if key in counts:
+                counts[key]=counts[key]+1
+
+            else: 
+                counts[key] = 1 
+
+
+
+
+
+        dict_vow ={}
+        dict_con ={}
+        for key, value in counts.items():
+            if key in vowels:
+                dict_vow[key] = value      # put vowel in vowel dict  NO append for dictionary ***
+            else:
+                dict_con[key] = value  
+
+        # return (max(dict_con.values()) + max(dict_vow.values())) This wont work sometimes there are no consonants
+
+
+            
+
+
+        
+
+        # return sum(counts[key])   SUM() needs an iterable
+        # return sum(counts.values())   the ONLY way to get all the values
+
+        max_vow = max(dict_vow.values(), default=0)
+        max_con = max(dict_con.values(), default=0)
+
+        return max_vow + max_con
+
+
+
+             
+
+
+
+
+
+        ```
 <br>
 <br>
 
