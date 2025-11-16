@@ -553,7 +553,8 @@ class Solution:
 
 
 
-Q10)  Say "Hello, World!" With Python
+Q10)  
+3541. Find Most Frequent Vowel and Consonant
 <br>
 You are given a string s consisting of lowercase English letters ('a' to 'z').
 
@@ -596,6 +597,13 @@ Constraints:
 
 1 <= s.length <= 100
 s consists of lowercase English letters only.
+
+
+<br>
+Link: https://leetcode.com/problems/find-most-frequent-vowel-and-consonant/
+
+<br>
+
 
 
 Solution: 
