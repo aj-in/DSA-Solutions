@@ -478,20 +478,87 @@ Note: need to realize every buy is a negative so we can multiply by -1 to all "b
 
 
 
-Q1)  Revising the Select Query I
+Q10)  
+3475. DNA Pattern Recognition
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+```
++----------------+---------+
+| Column Name    | Type    | 
++----------------+---------+
+| sample_id      | int     |
+| dna_sequence   | varchar |
+| species        | varchar |
++----------------+---------+
+```
+sample_id is the unique key for this table.
+Each row contains a DNA sequence represented as a string of characters (A, T, G, C) and the species it was collected from.
+Biologists are studying basic patterns in DNA sequences. Write a solution to identify sample_id with the following patterns:
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Sequences that start with ATG (a common start codon)
+Sequences that end with either TAA, TAG, or TGA (stop codons)
+Sequences containing the motif ATAT (a simple repeated pattern)
+Sequences that have at least 3 consecutive G (like GGG or GGGG)
+Return the result table ordered by sample_id in ascending order.
+
+The result format is in the following example.
+
+ 
+
+
+
+Link https://leetcode.com/problems/dna-pattern-recognition/description/
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select *, 
+-- Case 1
+case
+when left(dna_sequence,3) = 'ATG' then 1
+else 0
+
+end as 'has_start',
+
+
+-- Case 2
+case
+when right(dna_sequence, 3) = 'TAA' then 1
+when right(dna_sequence, 3) = 'TAG' then 1
+when right(dna_sequence, 3) = 'TGA' then 1
+else 0
+
+end as 'has_stop',
+
+
+
+
+-- Case 3
+case
+when dna_sequence like '%ATAT%' then 1
+else 0
+
+end as 'has_atat',
+
+
+-- Case 4
+case
+when dna_sequence like '%GGG%' then 1
+else 0
+
+end as 'has_ggg'
+
+from Samples;
 ```
+
+<br>
+<br>
+
+Note: 
+
+For last condition for GGG... or more G in sequence we must not be confused by wordings and to million G will have atleast 3 G in sequence so we can detect it first rest other G are optional.
+<br>
+knowing left() and right() also came in handy
 <br>
 <br>
 
