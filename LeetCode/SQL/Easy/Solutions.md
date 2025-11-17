@@ -425,45 +425,56 @@ make pivot tables my making UNIONs, also you can create an new column and fillin
 
 
 
-Q1)  Revising the Select Query I
+Q9)  
+1393. Capital Gain/Loss
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+```
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| stock_name    | varchar |
+| operation     | enum    |
+| operation_day | int     |
+| price         | int     |
++---------------+---------+
+```
+(stock_name, operation_day) is the primary key (combination of columns with unique values) for this table.
+The operation column is an ENUM (category) of type ('Sell', 'Buy')
+Each row of this table indicates that the stock which has stock_name had an operation on the day operation_day with the price.
+It is guaranteed that each 'Sell' operation for a stock has a corresponding 'Buy' operation in a previous day. It is also guaranteed that each 'Buy' operation for a stock has a corresponding 'Sell' operation in an upcoming day.
+ 
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Write a solution to report the Capital gain/loss for each stock.
 
+The Capital gain/loss of a stock is the total gain or loss after buying and selling the stock one or many times.
+
+Return the result table in any order.
+
+The result format is in the following example.
+Link https://leetcode.com/problems/capital-gainloss/description/
 
 Solution: 
 
 ```
-with temp1 as (select distinct salary 
-from Employee
-order by 1 desc
-limit 1 offset 1)
 
-select ifnull(salary, NULL) as 'SecondHighestSalary'  from temp1;   // the above SHOULD work but it doesnt on Leetcode
+with temp_rev as (select stock_name, operation, operation_day, price, case 
+when operation = 'Buy' then price * -1
+else price
+end as 'Act_revenue'
+
+from stocks)
+
+select stock_name, sum(Act_revenue)    as 'capital_gain_loss' from temp_rev
+group by 1;
+
 ```
+
+<br>
+Note: need to realize every buy is a negative so we can multiply by -1 to all "buy"
 <br>
 <br>
-Correct Solution
-```
-select (
 
-    select distinct salary 
-    from Employee
-    order by 1 desc
-    limit 1 offset 1
-) as 'SecondHighestSalary';
-```
 
-Notes: 
-If multiple people have the same highest salary, OFFSET 1 gives you another row with the same salary, not the second highest
-```
-ORDER BY salary DESC → 200, 200, 100
-LIMIT 1 OFFSET 1 → returns 200
-```
-
-Wrong logic above
-use distinct ***
 
 
 
