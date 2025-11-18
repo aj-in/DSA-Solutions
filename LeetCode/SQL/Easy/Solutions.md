@@ -256,24 +256,27 @@ s.product_id = p.product_id;
 Q6) 
 1378. Replace Employee ID With The Unique Identifier
 <br>
+```
 +---------------+---------+
 | Column Name   | Type    |
 +---------------+---------+
 | id            | int     |
 | name          | varchar |
 +---------------+---------+
+```
 id is the primary key (column with unique values) for this table.
 Each row of this table contains the id and the name of an employee in a company.
  
 
 Table: EmployeeUNI
-
+```
 +---------------+---------+
 | Column Name   | Type    |
 +---------------+---------+
 | id            | int     |
 | unique_id     | int     |
 +---------------+---------+
+```
 (id, unique_id) is the primary key (combination of columns with unique values) for this table.
 Each row of this table contains the id and the corresponding unique id of an employee in the company.
  
@@ -630,20 +633,55 @@ Used having clause to filter after the group by
 
 
 
-Q1)  Revising the Select Query I
+Q1)  
+1148. Article Views I
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Table: Views
+```
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| article_id    | int     |
+| author_id     | int     |
+| viewer_id     | int     |
+| view_date     | date    |
++---------------+---------+
+```
+There is no primary key (column with unique values) for this table, the table may have duplicate rows.
+Each row of this table indicates that some viewer viewed an article (written by some author) on some date. 
+Note that equal author_id and viewer_id indicate the same person.
+ 
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Write a solution to find all the authors that viewed at least one of their own articles.
 
+Return the result table sorted by id in ascending order.
+
+The result format is in the following example.
+
+Link https://leetcode.com/problems/article-views-i/
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+with nonNullViews as (       select case 
+        when author_id = viewer_id then author_id
+        end as 'id'
+
+        from Views
+
+        )
+
+
+select distinct(id) from nonNullViews  // dont forget views will be unique 
+where id is not null
+order by 1;                 // sometimes order by is not followed inside CTE take it out
 ```
+<br>
+<br>
+Notes: 
+dont forget views will be unique 
+<br>
+sometimes order by is not followed inside CTE take it out
 <br>
 <br>
 
