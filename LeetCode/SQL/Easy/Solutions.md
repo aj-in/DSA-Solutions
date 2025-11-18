@@ -566,22 +566,65 @@ knowing left() and right() also came in handy
 
 
 
-Q1)  Revising the Select Query I
+Q1)  
+1587. Bank Account Summary II
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Table: Users
+```
++--------------+---------+
+| Column Name  | Type    |
++--------------+---------+
+| account      | int     |
+| name         | varchar |
++--------------+---------+
+```
+account is the primary key (column with unique values) for this table.
+Each row of this table contains the account number of each user in the bank.
+There will be no two users having the same name in the table.
+ 
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Table: Transactions
+```
++---------------+---------+
+| Column Name   | Type    |
++---------------+---------+
+| trans_id      | int     |
+| account       | int     |
+| amount        | int     |
+| transacted_on | date    |
++---------------+---------+
+```
+trans_id is the primary key (column with unique values) for this table.
+Each row of this table contains all changes made to all accounts.
+amount is positive if the user received money and negative if they transferred money.
+All accounts start with a balance of 0.
+ 
+
+Write a solution to report the name and balance of users with a balance higher than 10000. The balance of an account is equal to the sum of the amounts of all transactions involving that account.
+
+Return the result table in any order.
+
+Link https://leetcode.com/problems/bank-account-summary-ii/
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select u.name, sum(t.amount) as balance from Users as u 
+join Transactions as t
+on
+u.account = t.account
+
+group by 1
+having balance    > 10000;
 ```
 <br>
 <br>
+Note: 
+Used having clause to filter after the group by 
+<br>
+<br>
+
 
 
 
