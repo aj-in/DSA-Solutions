@@ -688,20 +688,57 @@ sometimes order by is not followed inside CTE take it out
 
 
 
-Q1)  Revising the Select Query I
+Q1)  
+196. Delete Duplicate Emails
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+```
++-------------+---------+
+| Column Name | Type    |
++-------------+---------+
+| id          | int     |
+| email       | varchar |
++-------------+---------+
+```
+id is the primary key (column with unique values) for this table.
+Each row of this table contains an email. The emails will not contain uppercase letters.
+ 
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+Write a solution to delete all duplicate emails, keeping only one unique email with the smallest id.
 
+For SQL users, please note that you are supposed to write a DELETE statement and not a SELECT one.
+
+For Pandas users, please note that you are supposed to modify Person in place.
+
+After running your script, the answer shown is the Person table. The driver will first compile and run your piece of code and then show the Person table. The final order of the Person table does not matter.
+
+The result format is in the following example.
+
+
+
+Link https://leetcode.com/problems/delete-duplicate-emails/description/
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+delete p1 from 
+Person p1
+join 
+Person p2 
+on
+p1.email = p2.email
+and p1.id > p2.id;
+
+
+
 ```
+<br>
+<br>
+Note: it is unnatural to join not on the ID but we cannot put condiitons like 
+```
+p1.id = p2.id AND p1.id > p2.id
+```
+
+we can use p1.email = p2.email AND p1.id > p2.id
 <br>
 <br>
 
