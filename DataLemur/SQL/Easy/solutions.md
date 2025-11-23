@@ -1,20 +1,60 @@
 
 Q1)  Revising the Select Query I
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Given a table of Facebook posts, for each user who posted at least twice in 2021, write a query to find the number of days between each user’s first post of the year and last post of the year in the year 2021. Output the user and number of the days between each user's first and last post.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+p.s. If you've read the Ace the Data Science Interview and liked it, consider writing us a review?
 
+posts Table:
+```
+Column Name	Type
+user_id	integer
+post_id	integer
+post_content	text
+post_date	timestamp
+```
+
+posts Example Input:
+```
+user_id	post_id	post_content	post_date
+151652	599415	Need a hug	07/10/2021 12:00:00
+661093	624356	Bed. Class 8-12. Work 12-3. Gym 3-5 or 6. Then class 6-10. Another day that's gonna fly by. I miss my girlfriend	07/29/2021 13:00:00
+004239	784254	Happy 4th of July!	07/04/2021 11:00:00
+661093	442560	Just going to cry myself to sleep after watching Marley and Me.	07/08/2021 14:00:00
+151652	111766	I'm so done with covid - need travelling ASAP!	07/12/2021 19:00:00
+```
+Example Output:
+```
+user_id	days_between
+151652	2
+661093	21
+```
+
+The dataset you are querying against may have different input & output - this is just an example!
+
+Link https://datalemur.com/questions/sql-average-post-hiatus-1
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+SELECT user_id, datediff(  Max(date(post_date)), Min(date(post_date))  ) as days_between
+FROM posts
+where year(post_date)=2021
+group by 1
+having count(*)>1;
 ```
 <br>
 <br>
+Notes : 
+
+```
+You can use 2 aggregate functions in group by | and not mention it in Select and mention it in Having clause directly just to save another CTE
+```
+
+
+<br>
+<br>
+
 
 Q1)  Revising the Select Query I
 <br>
