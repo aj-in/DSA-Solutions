@@ -51,9 +51,64 @@ group by 1;
 ```
 
 
+Q2)  Revising the Select Query I
+<br>Given a table of candidates and their skills, you're tasked with finding the candidates best suited for an open Data Science job. You want to find candidates who are proficient in Python, Tableau, and PostgreSQL.
+
+Write a query to list the candidates who possess all of the required skills for the job. Sort the output by candidate ID in ascending order.
+
+Assumption:
+
+There are no duplicates in the candidates table.
+candidates Table:
+```
+Column Name	Type
+candidate_id	integer
+skill	varchar
+```
+candidates Example Input:
+```
+candidate_id	skill
+123	Python
+123	Tableau
+123	PostgreSQL
+234	R
+234	PowerBI
+234	SQL Server
+345	Python
+345	Tableau
+```
+Example Output:
+```
+candidate_id
+123
+```
 
 
-Q1)  Average Post Hiatus (Part 1)
+Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+
+
+Solution: 
+
+```
+select candidate_id from candidates 
+where skill in ('Python', 'Tableau', 'PostgreSQL')
+GROUP BY 1
+Having count(skill) = 3 
+order by 1;
+```
+<br>
+<br>
+Notes: 
+You can filter on the columns not menitoned in the group by's select 
+
+<br>
+<br>
+
+
+
+
+
+Q3)  Average Post Hiatus (Part 1)
 Facebook SQL Interview Question
 <br>
 Given a table of Facebook posts, for each user who posted at least twice in 2021, write a query to find the number of days between each user’s first post of the year and last post of the year in the year 2021. Output the user and number of the days between each user's first and last post.
