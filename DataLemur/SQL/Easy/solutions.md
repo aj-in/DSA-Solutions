@@ -353,7 +353,7 @@ You can use 2 aggregate functions in group by | and not mention it in Select and
 <br>
 
 
-Q2) Teams Power Users
+Q7) Teams Power Users
 Microsoft SQL Interview Question
 <br>
 Write a query to identify the top 2 Power Users who sent the highest number of messages on Microsoft Teams in August 2022. Display the IDs of these 2 users along with the total number of messages they sent. Output the results in descending order based on the count of the messages.
@@ -403,7 +403,7 @@ limit 2;
 <br>
 <br>
 
-Q3)  Duplicate Job Listings
+Q8)  Duplicate Job Listings
 LinkedIn SQL Interview Question
 <br>
 This is the same question as problem #8 in the SQL Chapter of Ace the Data Science Interview!
