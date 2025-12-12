@@ -1,4 +1,4 @@
-
+    
 Q1) Histogram of Tweets
 Twitter SQL Interview Question
 This is the same question as problem #6 in the SQL Chapter of Ace the Data Science Interview!
@@ -228,10 +228,70 @@ where finish_date is null ;
 <br>
 
 
+Q5) Laptop vs. Mobile Viewership
+NY Times SQL Interview Question
+
+<br>
+
+***
+This is the same question as problem #3 in the SQL Chapter of Ace the Data Science Interview!
+
+Assume you're given the table on user viewership categorised by device type where the three types are laptop, tablet, and phone.
+
+Write a query that calculates the total viewership for laptops and mobile devices where mobile is defined as the sum of tablet and phone viewership. Output the total viewership for laptops as laptop_reviews and the total viewership for mobile devices as mobile_views.
+
+Effective 15 April 2023, the solution has been updated with a more concise and easy-to-understand approach.
+
+viewership Table
+```
+Column Name	Type
+user_id	integer
+device_type	string ('laptop', 'tablet', 'phone')
+view_time	timestamp
+```
+viewership Example Input
+```
+user_id	device_type	view_time
+123	tablet	01/02/2022 00:00:00
+125	laptop	01/07/2022 00:00:00
+128	laptop	02/09/2022 00:00:00
+129	phone	02/09/2022 00:00:00
+145	tablet	02/24/2022 00:00:00
+```
+Example Output
+```
+laptop_views	mobile_views
+2	3
+```
+Explanation
+
+Link https://datalemur.com/questions/laptop-mobile-viewership
+
+Solution: 
+
+```
+
+
+select  
+sum(case when device_type = 'laptop' then 1 else 0 end) as laptop_reviews, 
+sum(case when device_type = 'phone' or device_type = 'tablet' then 1 else 0 end) as mobile_views
+from viewership; 
+
+
+```
+<br>
+Notes: 
+
+```
+Use Case statements as counters and make calculated fields like in Power BI
+```
+<br>
+<br>
 
 
 
-Q3)  Average Post Hiatus (Part 1)
+
+Q6)  Average Post Hiatus (Part 1)
 Facebook SQL Interview Question
 <br>
 Given a table of Facebook posts, for each user who posted at least twice in 2021, write a query to find the number of days between each user’s first post of the year and last post of the year in the year 2021. Output the user and number of the days between each user's first and last post.
