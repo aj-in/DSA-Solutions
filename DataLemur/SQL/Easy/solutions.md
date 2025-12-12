@@ -105,7 +105,7 @@ You can filter on the columns not menitoned in the group by's select
 <br>
 
 
-Q2.9) Page With No Likes
+Q3) Page With No Likes
 Facebook SQL Interview Question
 <br>
 Assume you're given two tables containing data about Facebook Pages and their respective likes (as in "Like a Facebook Page").
@@ -173,7 +173,8 @@ Left join will give me the nulls
 <br>
 
 
-Q2.91)  Revising the Select Query I
+Q4)  Unfinished Parts
+Tesla SQL Interview QuestionI
 <br>
 Tesla is investigating production bottlenecks and they need your help to extract the relevant data. Write a query to determine which parts have begun the assembly process but are not yet finished.
 
