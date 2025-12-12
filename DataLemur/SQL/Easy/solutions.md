@@ -233,7 +233,11 @@ NY Times SQL Interview Question
 
 <br>
 
+IMP 
+```
 ***
+```
+
 This is the same question as problem #3 in the SQL Chapter of Ace the Data Science Interview!
 
 Assume you're given the table on user viewership categorised by device type where the three types are laptop, tablet, and phone.
