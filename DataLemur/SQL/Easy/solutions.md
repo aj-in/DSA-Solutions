@@ -595,19 +595,54 @@ EXTRACT( MONTH FROM submit_date) .... is postgreSQL
 <br>
 <br>
 
-Q1)  Revising the Select Query I
+Q10)  Final Account Balance
+PayPal SQL Interview Question
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Given a table containing information about bank deposits and withdrawals made using Paypal, write a query to retrieve the final account balance for each account, taking into account all the transactions recorded in the table with the assumption that there are no missing transactions.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+transactions Table:
+```
+Column Name	Type
+transaction_id	integer
+account_id	integer
+amount	decimal
+transaction_type	varchar
+```
+transactions Example Input:
+```
+transaction_id	account_id	amount	transaction_type
+123	101	10.00	Deposit
+124	101	20.00	Deposit
+125	101	5.00	Withdrawal
+126	201	20.00	Deposit
+128	201	10.00	Withdrawal
+```
+Example Output:
+```
+account_id	final_balance
+101	25.00
+201	10.00
+```
+Using account ID 101 as an example, $30.00 was deposited into this account, while $5.00 was withdrawn. Therefore, the final account balance can be calculated as the difference between the total deposits and withdrawals which is $30.00 - $5.00, resulting in a final balance of $25.00.
 
+Link https://datalemur.com/questions/final-account-balance
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+with normalized_amnt as (SELECT *, case 
+
+when transaction_type ='Withdrawal' then amount*-1
+when transaction_type ='Deposit' then amount
+
+end as new_amount
+
+FROM transactions)
+
+
+select account_id, sum(new_amount) as final_balance from normalized_amnt
+
+GROUP by 1;
 ```
 <br>
 <br>
