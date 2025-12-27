@@ -830,10 +830,11 @@ Link https://datalemur.com/questions/total-drugs-sales
 Solution: 
 
 ```
--- SELECT manufacturer, concat ('$', round(sum(total_sales)/1000000, ' million') as "sale" 
--- FROM pharmacy_sales
--- group by 1
--- order by sum(total_sales) desc, manufacturer;
+SELECT manufacturer, concat('$',   round(  (round(sum(total_sales), -6)/1000000), 0),  ' million') as "sale" 
+FROM pharmacy_sales
+GROUP BY 1
+ORDER BY 2 desc, 1;
+
 ```
 <br>
 <br>
