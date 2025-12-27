@@ -836,6 +836,17 @@ GROUP BY 1
 ORDER BY 2 desc, 1;
 
 ```
+Note: the above just works but is complex to type, we know in division we can divide number to shift the decimals point to the left, AKA we round it to nearest (we can also do this by round(col1, -6))
+but that leaves .000000 at the end so we need another round below is a cleaner solution
+Better solution
+
+```
+SELECT manufacturer, concat('$',   round(  sum(total_sales)/1000000)  ,  ' million') as "sale" 
+FROM pharmacy_sales
+GROUP BY 1
+ORDER BY 2 desc, 1;
+
+```
 <br>
 <br>
 
