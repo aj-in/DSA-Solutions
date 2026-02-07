@@ -297,6 +297,8 @@ select distinct(city)
 from station
 where city like regexp '^[a,e,i,o,u]';      .... no need of commas, OR spaces  [a e i o u] OR a like 
 
+<br> also ^ = starts with  (a good mnemonic is they dont like to make $ so they dont start with $ that leaves us with ^)
+
 
 ```
 select distinct(city)
