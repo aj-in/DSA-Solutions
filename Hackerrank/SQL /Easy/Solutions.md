@@ -547,7 +547,12 @@ Each row in the table denotes the lengths of each of a triangle's three sides.
 -- from Triangles
 
 from the above the issue is
--- when A=B or B=C or C=A then 'Isosceles'               ..... this condition is the MOST complex...you say if only one OR all are satisfied then isocile but colliiosn case is when all are correct then who should be isoclece and equliaterla that is the confusion when all ORs are met .... so remove it outside so it is by defualt handleed by others
+-- when A=B or B=C or C=A then 'Isosceles'               ..... this condition is the MOST complex...you say if only one OR all are satisfied then isocile but colliiosn case is when all are correct then who should be isoclece and equliaterla that is the confusion when all ORs are met .... so remove it outside so it is by default handled by others
+
+OR
+you should check for equilateral first
+
+Order Matters: Equilateral must come before Isosceles. cuz we already have equilterals poplated it won't edit the past ones, and the rest are handled by Isoceles
 
 
 select 
