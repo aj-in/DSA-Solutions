@@ -244,7 +244,7 @@ after everything we need an overarching min so we can aggreagate over teh non aa
 
 
 
-Q11) Weather Observation Station 6
+Q11) Weather Observation Station 6 ***
 
 <br>
 
@@ -295,7 +295,7 @@ or use regexp (Regular Expressions)
 
 select distinct(city)
 from station
-where city like regexp '^[a,e,i,o,u]';      .... no need of commas and a like 
+where city like regexp '^[a,e,i,o,u]';      .... no need of commas, OR spaces  [a e i o u] OR a like 
 
 
 ```
