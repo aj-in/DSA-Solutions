@@ -514,6 +514,61 @@ order by employee_id;
 <br>
 
 
+Q21) Type of Triangle
+
+<br>
+Link: https://www.hackerrank.com/challenges/what-type-of-triangle/problem?isFullScreen=true
+<br>
+
+Write a query identifying the type of each record in the TRIANGLES table using its three side lengths. Output one of the following statements for each record in the table:
+
+Equilateral: It's a triangle with  sides of equal length.
+Isosceles: It's a triangle with  sides of equal length.
+Scalene: It's a triangle with  sides of differing lengths.
+Not A Triangle: The given values of A, B, and C don't form a triangle.
+Input Format
+
+The TRIANGLES table is described as follows:
+
+
+
+Each row in the table denotes the lengths of each of a triangle's three sides.
+
+```
+-- select 
+-- case
+-- when A + B <= C or A+C <=B or B+C<=A then 'Not A Triangle'
+-- when A=B or B=C or C=A then 'Isosceles'             
+-- when A=B and B=C and C=A then 'Equilateral'
+-- when A!=B and B!=C and C!=A then 'Scalene'
+
+-- end
+
+-- from Triangles
+
+from the above the issue is
+-- when A=B or B=C or C=A then 'Isosceles'               ..... this condition is the MOST complex...you say if only one OR all are satisfied then isocile but colliiosn case is when all are correct then who should be isoclece and equliaterla that is the confusion when all ORs are met .... so remove it outside so it is by defualt handleed by others
+
+
+select 
+case
+when A + B <= C or A+C <=B or B+C<=A then 'Not A Triangle'
+when A=B and B=C and C=A then 'Equilateral'
+when A!=B and B!=C and C!=A then 'Scalene'
+
+else 'Isosceles'
+
+
+end
+
+from Triangles
+```
+
+
+<br>
+<br>
+
+
 Q22)  Revising Aggregations - The Count Function
 <br>
 Query a count of the number of cities in CITY having a Population larger than 100000.
