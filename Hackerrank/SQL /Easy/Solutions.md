@@ -772,11 +772,12 @@ limit 1;
 
 
 
-Q32)  Weather Observation Station 15
+Q32)  Weather Observation Station 15 ***
 <br>
 Query the Western Longitude (LONG_W) for the largest Northern Latitude (LAT_N) in STATION that is less than . Round your answer to  decimal places.
 
 Link https://www.hackerrank.com/challenges/weather-observation-station-15/problem?isFullScreen=true
+
 
 
 Solution: 
@@ -784,9 +785,17 @@ Solution:
 ```
 select round(LONG_W,4)
 from station
-where LAT_N<137.2345
+where LAT_N<137.2345            // cannot directly use aggregate function in WHERE clause
 order by LAT_N desc
 limit 1;
+```
+<br>
+
+The below is wrong because you CANNOT use aggregate func in the where directly  .......
+```
+select round(LONG_W,4) from station
+WHERE
+max(LAT_N) < 137.2345
 ```
 <br>
 <br>
