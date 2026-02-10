@@ -798,7 +798,30 @@ WHERE
 max(LAT_N) < 137.2345
 ```
 <br>
+
+“Wait…
+WHERE filters rows
+but MAX(LAT_N) is one number for the whole table
+— which row am I supposed to filter?”
+
+There’s no row-by-row comparison possible, so it’s invalid.
+
+
+
+SQL runs in this order (this is CRUCIAL):
+
+FROM
+
+WHERE
+
+SELECT
+
+AGGREGATES (MAX, MIN, etc.)
+
+ Aggregates like MAX() do NOT exist yet when WHERE runs.***
 <br>
+<br>
+
 
 
 
