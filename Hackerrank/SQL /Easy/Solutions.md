@@ -699,6 +699,14 @@ group by Total_Earnings
 order by Total_Earnings desc
 limit 1 ;
 
+
+--OR
+
+select (salary* months) as 'total earnings', count(*) from Employee      ... Imagine all the group by in head reather than confusing people
+group by 1
+order by 1 desc
+limit 1; 
+
 ```
 <br>
 <br>
