@@ -929,6 +929,52 @@ where COUNTRY.CONTINENT = 'Africa'
 
 
 
+Q37) Average Population of Each Continent *** 
+<br>
+Given the CITY and COUNTRY tables, query the names of all the continents (COUNTRY.Continent) and their respective average city populations (CITY.Population) rounded down to the nearest integer.
+
+Note: CITY.CountryCode and COUNTRY.Code are matching key columns.
+
+Input Format
+
+The CITY and COUNTRY tables are described as follows:
+
+Link https://www.hackerrank.com/challenges/average-population-of-each-continent/problem?isFullScreen=true
+
+Solution: 
+
+```
+select COUNTRY.Continent, floor(avg(CITY.Population)) from COUNTRY       // Pay attention to english
+join 
+CITY
+on 
+
+CITY.CountryCode = COUNTRY.Code
+
+
+
+group by 1
+
+
+
+select COUNTRY.Continent, round(avg(CITY.Population),0) from COUNTRY // wrong
+join 
+CITY
+on 
+
+CITY.CountryCode = COUNTRY.Code
+
+
+
+group by 1
+order by 1 desc
+
+```
+<br>
+Note: Pay attention to English..... rounded down doesn't mean round() they actually want to round lower, so something like ceil() and floor() from Python.... don't assume American English and think it's just a preposition, ask for clarification in the interviews
+<br>
+
+
 
 
 
