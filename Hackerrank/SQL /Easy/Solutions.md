@@ -859,7 +859,7 @@ Solution:
 select round(LONG_W,4) from station
 where 
 LAT_N > 38.7780 
-order by LAT_N 
+order by LAT_N       // we can order by on the columns not present in the Select ...."result set"
 limit 1;
 ```
 <br>
