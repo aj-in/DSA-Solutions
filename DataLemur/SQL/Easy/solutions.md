@@ -903,20 +903,62 @@ select  count(policy_holder_id) as policy_holder_count from countCTE;
 
 
 
-Q1)  Revising the Select Query I
+Q1)  Compressed Mean
+Alibaba SQL Interview Question
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+You're trying to find the mean number of items per order on Alibaba, rounded to 1 decimal place using tables which includes information on the count of items in each order (item_count table) and the corresponding number of orders for each item count (order_occurrences table).
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+items_per_order Table:
+```
+Column Name	Type
+item_count	integer
+order_occurrences	integer
+items_per_order
+```
+Example Input:
+```
+item_count	order_occurrences
+1	500
+2	1000
+3	800
+4	1000
+```
+There are a total of 500 orders with one item per order, 1000 orders with two items per order, and 800 orders with three items per order."
+
+Example Output:
+```
+mean
+2.7
+```
+
+
+Link https://datalemur.com/questions/alibaba-compressed-mean
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+
+
+
+with temp1 as ( select *, (item_count*order_occurrences)::DECIMAL as multi
+from items_per_order )
+
+select round(sum(multi)/sum(order_occurrences), 1)  from temp1;
+
+
 ```
+<br>
+<br>
+Note : for PostgreSQL you need to typecast, MySQL is generally more relaxed, also be sure to type cast the whole new column 
+
+(item_count*order_occurrences)::DECIMAL as multi   
+
+vs
+
+item_count*order_occurrences::DECIMAL as multi            // this just applies the casting to one of the columns
+
+
 <br>
 <br>
 
