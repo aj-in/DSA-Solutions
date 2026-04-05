@@ -75,38 +75,90 @@ Row_number() window functions are ideal as we filter by a new column we create, 
 
 
 
-Q1)  Revising the Select Query I
+Q2)  Second Highest Salary
+FAANG SQL Interview Question
+
 <br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Imagine you're an HR analyst at a tech company tasked with analyzing employee salaries. Your manager is keen on understanding the pay distribution and asks you to determine the second highest salary among all employees.
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+It's possible that multiple employees may share the same second highest salary. In case of duplicate, display the salary only once.
 
+employee Schema:
+```
+column_name	type	description
+employee_id	integer	The unique ID of the employee.
+name	string	The name of the employee.
+salary	integer	The salary of the employee.
+department_id	integer	The department ID of the employee.
+manager_id	integer	The manager ID of the employee.
+
+```
+
+employee Example Input:
+```
+
+employee_id	name	salary	department_id	manager_id
+1	Emma Thompson	3800	1	6
+2	Daniel Rodriguez	2230	1	7
+3	Olivia Smith	2000	1	8
+```
+
+Example Output:
+```
+
+second_highest_salary
+2230
+```
+
+The output represents the second highest salary among all employees. In this case, the second highest salary is $2,230.
+
+The dataset you are querying against may have different input & output - this is just an example!
+
+Link https://datalemur.com/questions/sql-second-highest-salary
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+SELECT salary as second_highest_salary
+FROM employee
+order by salary desc
+
+OFFSET 1
+LIMIT 1;
 ```
 <br>
 <br>
-Q1)  Revising the Select Query I
-<br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Note: 
+be careful where you place the offset 
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+limit 2
+OFFSET 1;
 
+this gives
 
-Solution: 
+Output
+```
+
+second_highest_salary
+12500
+11000
+```
+
+Expected
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+
+second_highest_salary
+12500
 ```
+
+Logic: we want to get the final sorted data and then we need to offset by one so we skip the largest salary and then limit the output to 1 row(s) so we see the 2nd highest
+
 <br>
 <br>
+
+
+
 Q1)  Revising the Select Query I
 <br>
 Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
