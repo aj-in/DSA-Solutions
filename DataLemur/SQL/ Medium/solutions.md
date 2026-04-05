@@ -68,7 +68,7 @@ Note:
 Rank and Dense rank skip numbers or duplicate them on collisions
 & offset 3 will not be useful as it is global 
 
-Row_number() window functions is ideal  as we fileter by a new column we create and no issues of collision
+Row_number() window functions are ideal as we filter by a new column we create, and no issues of duplicate ranks for collision test cases
 
 <br>
 <br>
