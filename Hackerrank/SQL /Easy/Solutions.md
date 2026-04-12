@@ -646,9 +646,29 @@ Link https://www.hackerrank.com/challenges/average-population/problem?isFullScre
 Solution: 
 
 ```
-select round(avg(population),0) from city;
+select floor(avg(population)) from city;   
 
 ```
+<br>
+<br>
+Note: 
+
+```
+select round(avg(Population),0)   // rounded DOWN , not just round
+from city; 
+
+
+select floor(avg(Population),0)   
+from city;  
+
+// wrong floor naturally gives integer why 0  as an argument passed?
+
+select floor(avg(Population))
+from city;  
+
+
+```
+
 <br>
 <br>
 
