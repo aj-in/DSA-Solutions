@@ -1034,6 +1034,17 @@ order by 1 desc
 ```
 <br>
 Note: Pay attention to English..... rounded down doesn't mean round() they actually want to round lower, so something like ceil() and floor() from Python.... don't assume American English and think it's just a preposition, ask for clarification in the interviews
+
+also
+
+```
+select COUNTRY.Continent, floor(avg(CITY.Population))
+
+from CITY 
+join COUNTRY                                                            
+
+on city.CountryCode = COUNTRY.CountryCode;                       // if they didnt say group by you cannot leave without aggregating because 2nd column is aggregated and 1st one isnt   *** 
+```
 <br>
 
 
