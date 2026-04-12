@@ -513,6 +513,17 @@ order by employee_id;
 <br>
 <br>
 
+```
+Note: we know the salary is monthly salary, so we don't have to convert it into months
+if it was annual, we would convert it to monthly by multiplying by a factor of 12,  to total by 12 would give em monthly 
+
+eg I have 60K salary, and this is annually 
+so monthly salary is 60K/ 12  = 5k
+```
+
+<br>
+<br>
+
 
 Q21) Type of Triangle
 
