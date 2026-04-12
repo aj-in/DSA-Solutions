@@ -57,10 +57,12 @@ Note :
 select count(tweet_id) as tweet_bucket, count(user_id) as users_num from tweets
 where extract(YEAR from tweet_date) = 2022
 group by user_id;
+```
 
 
-If you get some compleicated logic like this simplify two group bys with CTEs
+If you get some complicated logic like this, simplify the two group bys with CTEs
 
+```
 with userGrpBy as (
     select user_id, count(*) as 'IndividualTCount'
     from tweets
