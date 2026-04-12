@@ -743,6 +743,37 @@ limit 1;
 <br>
 
 
+Note 
+```
+select salary * months as 'total_earnings', count(*) from Employee
+
+group by 'total_earnings';   //WRONG
+```
+
+When you use quotes like 'total_earnings', SQL treats that as a literal string of text, not a column name.
+The Error: You aren't actually grouping by the math (salary * months); you are telling the database to group every single row by the word "total_earnings".
+
+order of execution in GROUP BY first, then SELECT,  so it just groups by a string of alias
+
+```
+select salary * months as 'total_earnings', count(*) from Employee
+
+group by 1;
+```
+
+OR 
+```
+
+select salary * months as 'total_earnings', count(*) from Employee
+
+group by salary * months;  
+```
+both of them work.....
+
+<br>
+<br>
+
+
 
 Q29)  Weather Observation Station 2
 <br>
