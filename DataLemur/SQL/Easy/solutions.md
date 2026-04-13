@@ -191,7 +191,17 @@ page_likes as pl
 ON
 p.page_id = pl.page_id
 
-where pl.page_id is null;
+where pl.page_id is null;  // wrong forgot order by
+
+
+select p.page_id   from pages as p 
+left join 
+page_likes as l 
+on 
+p.page_id = l.page_id
+where liked_date is NULL
+order by 1;
+
 ```
 <br>
 <br>
