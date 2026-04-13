@@ -320,6 +320,28 @@ sum(case when device_type = 'phone' or device_type = 'tablet' then 1 else 0 end)
 from viewership; 
 
 
+OR
+
+      
+with temp1 as (      
+      SELECT 
+      case 
+      when device_type ='laptop' then user_id
+      end as laptop_views, 
+      
+      case
+      when device_type ='tablet' or device_type ='phone' then user_id
+      end as mobile_views
+      
+      FROM viewership)
+      
+      
+
+select count(laptop_views) as laptop_views, count(mobile_views) as mobile_views from temp1;
+
+
+
+
 ```
 <br>
 Notes: 
