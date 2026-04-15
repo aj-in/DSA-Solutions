@@ -357,6 +357,12 @@ Notes:
 
 ```
 Use Case statements as counters and make calculated fields like in Power BI
+
+
+2)
+-End should be inside the bracket …. idk why then need to END at the same place
+- also you are going to create a lot of NULLs so you will have to sum over them, its good for now as we are collappsing all rows into a SUM
+- ALIAS IN postgreSQL is NOT WITH '', sum( case when device_type = 'laptop' then 1) end as 'laptop_views'…. this is wrong
 ```
 <br>
 <br>
