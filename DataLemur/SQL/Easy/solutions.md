@@ -123,6 +123,15 @@ where skill in ('Python', 'Tableau', 'PostgreSQL')
 GROUP BY 1
 Having count(skill) = 3 
 order by 1;
+
+----
+
+select candidate_id 
+from candidates 
+where skill in("Python, "Tableau", "PostgreSQL")      //wrong psotgres doenst accept "", try using '' | just not to group by and calling an alias
+group by candidate_id
+having count(skill) = 3;
+
 ```
 <br>
 <br>
