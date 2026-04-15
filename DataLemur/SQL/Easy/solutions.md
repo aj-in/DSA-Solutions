@@ -997,7 +997,7 @@ select  count(policy_holder_id) as policy_holder_count from countCTE;
 
 
 
-Q1)  Compressed Mean
+Q22)  Compressed Mean
 Alibaba SQL Interview Question
 <br>
 You're trying to find the mean number of items per order on Alibaba, rounded to 1 decimal place using tables which includes information on the count of items in each order (item_count table) and the corresponding number of orders for each item count (order_occurrences table).
@@ -1056,22 +1056,66 @@ item_count*order_occurrences::DECIMAL as multi            // this just applies t
 <br>
 <br>
 
-Q1)  Revising the Select Query I
-<br>
-Query the Name of any student in STUDENTS who scored higher than  Marks. Order your output by the last three characters of each name. If two or more students both have names ending in the same last three characters (i.e.: Bobby, Robby, etc.), secondary sort them by ascending ID.
+Q23)  Well Paid Employees
+FAANG SQL Interview Question
 
-Link https://www.hackerrank.com/challenges/revising-the-select-query/problem?isFullScreen=true
+<br>
+Companies often perform salary analyses to ensure fair compensation practices. One useful analysis is to check if there are any employees earning more than their direct managers.
+
+As a HR Analyst, you're asked to identify all employees who earn more than their direct managers. The result should include the employee's ID and name.
+
+employee Schema:
+```
+column_name	type	description
+employee_id	integer	The unique ID of the employee.
+name	string	The name of the employee.
+salary	integer	The salary of the employee.
+department_id	integer	The department ID of the employee.
+manager_id	integer	The manager ID of the employee.
+```
+employee Example Input:
+```
+employee_id	name	salary	department_id	manager_id
+1	Emma Thompson	3800	1	6
+2	Daniel Rodriguez	2230	1	7
+3	Olivia Smith	7000	1	8
+4	Noah Johnson	6800	2	9
+5	Sophia Martinez	1750	1	11
+6	Liam Brown	13000	3	NULL
+7	Ava Garcia	12500	3	NULL
+8	William Davis	6800	2	NULL
+```
+Example Output:
+```
+employee_id	employee_name
+3	Olivia Smith
+```
+The output shows that Olivia Smith earns $7,000, surpassing her manager, William David who earns $6,800.
+
+The dataset you are querying against may have different input & output - this is just an example!
+
+Link https://datalemur.com/questions/sql-well-paid-employees
 
 
 Solution: 
 
 ```
-Select * from CITY
-where POPULATION> 100000 and
-COUNTRYCODE = 'USA';
+select e.employee_id, e.name from employee e 
+join employee m
+on
+e.manager_id =  m.employee_id     
+
+where m.salary<e.salary;
 ```
 <br>
 <br>
+Employee info
+
+```
+using on m.manager_id = e.employee_id means employees id is employees id, just that have the same datatype, so we join
+BUT 
+e.manager_id =  m.employee_id  means  SHOWS CORRELLATION like employees' id is managers id
+```
 
 Q1)  Revising the Select Query I
 <br>
