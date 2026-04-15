@@ -424,6 +424,25 @@ You can use 2 aggregate functions in group by | and not mention it in Select and
 ```
 
 
+```
+
+select user_id,
+MAX(post_date::date)- MIN(post_date::date) as days_between
+
+from posts 
+where post_date::year=2021  // WRONG 
+GROUP by user_id
+having (MAX(post_date::date)- MIN(post_date::date)) > 0; 
+
+```
+
+| You write                      | PostgreSQL thinks      | Result  |
+| ------------------------------ | ---------------------- | ------- |
+| `post_date::date`              | Convert type → valid   | ✅ Works |
+| `post_date::year`              | Convert to type "year" | ❌ Error |
+| `EXTRACT(YEAR FROM post_date)` | Pull year value        | ✅ Works |
+
+
 <br>
 <br>
 
